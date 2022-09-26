@@ -7,7 +7,7 @@ export const ContactsPage = (props) => {
   Define state variables for 
   contact info and duplicate check
   */
-  const [currentName, setCurrentName] = useState("");
+  const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [duplicate, setDuplicate] = useState(false);
@@ -21,9 +21,9 @@ export const ContactsPage = (props) => {
     if the contact name is not a duplicate
     */
     if (!duplicate) {
-      updateContacts({ name: currentName, phoneNUmber: phone, email: email });
+      updateContacts({ name: name, phoneNUmber: phone, email: email });
 
-      setCurrentName("");
+      setName("");
       setPhone("");
       setEmail("");
     }
@@ -34,16 +34,24 @@ export const ContactsPage = (props) => {
   contacts array variable in props
   */
   useEffect(() => {
-    if (contacts.includes(currentName)) {
+    if (contacts.includes(name)) {
       setDuplicate(true);
     }
-  }, [currentName]);
+  }, [name]);
 
   return (
     <div>
       <section>
         <h2>Add Contact</h2>
-        <ContactForm currentName={currentName} setCurrentName={setCurrentName} phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} handleSubmit={handleSubmit} />
+        <ContactForm
+          name={name}
+          setName={setName}
+          phone={phone}
+          setPhone={setPhone}
+          email={email}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
+        />
       </section>
       <hr />
       <section>

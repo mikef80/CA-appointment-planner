@@ -11,10 +11,26 @@ export const ContactForm = ({
 }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" />
-      <input type="tel" pattern="[0-9]{11}"/>
-      <input type="email" />
-      <button type="submit">Submit</button>
+      <input
+        type='text'
+        value={name.value}
+        onChange={setName}
+        placeholder='Enter name'
+      />
+      <input
+        type='tel'
+        pattern='[0][0-9]{10}'
+        value={phone.value}
+        onChange={setPhone}
+        placeholder='Enter telephone number'
+      />
+      <input
+        type='email'
+        value={email.value}
+        onChange={setEmail}
+        placeholder='Enter email address'
+      />
+      <button type='submit'>Submit</button>
     </form>
   );
 };
