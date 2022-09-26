@@ -7,9 +7,14 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
-  handleSubmit
+  handleSubmit,
 }) => {
   return (
-    ContactForm
+    <form onSubmit={handleSubmit}>
+      <input type="text" />
+      <input type="tel" pattern="[0-9]{11}"/>
+      <input type="email" />
+      <button type="submit">Submit</button>
+    </form>
   );
 };
