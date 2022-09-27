@@ -41,7 +41,6 @@ function App() {
       phone: phone,
       email: email,
     };
-    console.log("addContacts");
     setContacts((prev) => [...prev, contact]);
   };
 
