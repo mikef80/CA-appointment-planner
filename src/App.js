@@ -11,7 +11,7 @@ function App() {
   */
   const [appointments, setAppointments] = useState([]);
   const [contacts, setContacts] = useState([
-    { name: "Mike", phoneNumber: 12345, email: "mike@mike-francis.org" },
+    { name: "Mike", phone: 12345678901, email: "mike@mike-francis.org" },
   ]);
 
   const ROUTES = {
@@ -35,34 +35,34 @@ function App() {
     setAppointments((prev) => [...prev, appointment]);
   };
 
-  const addContacts = (name, phoneNumber, email) => {
+  const addContacts = (name, phone, email) => {
     const contact = {
       name: name,
-      phoneNumber: phoneNumber,
+      phone: phone,
       email: email,
     };
-
+    console.log("addContacts");
     setContacts((prev) => [...prev, contact]);
   };
 
   return (
     <>
       <nav>
-        <NavLink to={ROUTES.CONTACTS} activeClassName="active">
+        <NavLink to={ROUTES.CONTACTS} activeClassName='active'>
           Contacts
         </NavLink>
-        <NavLink to={ROUTES.APPOINTMENTS} activeClassName="active">
+        <NavLink to={ROUTES.APPOINTMENTS} activeClassName='active'>
           Appointments
         </NavLink>
       </nav>
       <main>
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
-            <ContactsPage contacts={contacts} updateContacts={addContacts} />
+            <ContactsPage contacts={contacts} addContacts={addContacts} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}

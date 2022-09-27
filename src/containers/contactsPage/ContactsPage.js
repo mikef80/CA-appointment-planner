@@ -12,7 +12,7 @@ export const ContactsPage = (props) => {
   const [email, setEmail] = useState("");
   const [duplicate, setDuplicate] = useState(false);
 
-  const { contacts, updateContacts } = props;
+  const { contacts, addContacts } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +21,10 @@ export const ContactsPage = (props) => {
     if the contact name is not a duplicate
     */
     if (!duplicate) {
-      updateContacts({ name: name, phoneNUmber: phone, email: email });
-
+      const contact = { name: name, phone: phone, email: email };
+      console.log(contact);
+      addContacts(contact);
+      console.log("submit");
       setName("");
       setPhone("");
       setEmail("");
