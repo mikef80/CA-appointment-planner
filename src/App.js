@@ -35,7 +35,7 @@ function App() {
     setAppointments((prev) => [...prev, appointment]);
   };
 
-  const addContacts = (name, phone, email) => {
+  const addContacts = ({name, phone, email}) => {
     const contact = {
       name: name,
       phone: phone,

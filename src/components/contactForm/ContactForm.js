@@ -13,20 +13,20 @@ export const ContactForm = ({
     <form onSubmit={handleSubmit}>
       <input
         type='text'
-        value={name.value}
+        value={name}
         onChange={setName}
         placeholder='Enter name'
       />
       <input
         type='tel'
         pattern='[0][0-9]{10}'
-        value={phone.value}
+        value={phone}
         onChange={setPhone}
         placeholder='Enter telephone number'
       />
       <input
         type='email'
-        value={email.value}
+        value={email}
         onChange={setEmail}
         placeholder='Enter email address'
       />

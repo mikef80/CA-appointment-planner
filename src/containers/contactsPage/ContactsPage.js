@@ -31,6 +31,21 @@ export const ContactsPage = (props) => {
     }
   };
 
+  const updateNameHandler = (e) => {
+    const name = e.target.value;
+    setName(name);
+  };
+
+  const updatePhoneHandler = (e) => {
+    const phone = e.target.value;
+    setPhone(phone);
+  };
+
+  const updateEmailHandler = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+  };
+
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
@@ -47,11 +62,11 @@ export const ContactsPage = (props) => {
         <h2>Add Contact</h2>
         <ContactForm
           name={name}
-          setName={setName}
+          setName={updateNameHandler}
           phone={phone}
-          setPhone={setPhone}
+          setPhone={updatePhoneHandler}
           email={email}
-          setEmail={setEmail}
+          setEmail={updateEmailHandler}
           handleSubmit={handleSubmit}
         />
       </section>
