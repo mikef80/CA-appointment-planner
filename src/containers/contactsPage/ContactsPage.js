@@ -59,6 +59,15 @@ export const ContactsPage = (props) => {
         setDuplicate(false);
       }
     });
+
+    /* contacts.forEach(contact => {
+      const contactName = contact.name;
+      if (contactName.toLowerCase() === name.toLowerCase()) {
+        setDuplicate(true);
+      } else {
+        setDuplicate(false);
+      }
+    }); */
   }, [name]);
 
   return (
