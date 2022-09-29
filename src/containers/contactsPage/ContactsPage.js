@@ -51,23 +51,10 @@ export const ContactsPage = (props) => {
   */
 
   useEffect(() => {
-    contacts.some((contact) => {
-      const contactName = contact.name;
-      if (contactName.toLowerCase() === name.toLowerCase()) {
-        setDuplicate(true);
-      } else {
-        setDuplicate(false);
-      }
+    const duplicate = contacts.some((contact) => {
+      return contact.name === name;
     });
-
-    /* contacts.forEach(contact => {
-      const contactName = contact.name;
-      if (contactName.toLowerCase() === name.toLowerCase()) {
-        setDuplicate(true);
-      } else {
-        setDuplicate(false);
-      }
-    }); */
+    setDuplicate(duplicate);
   }, [name]);
 
   return (
