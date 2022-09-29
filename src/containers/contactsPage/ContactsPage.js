@@ -52,7 +52,8 @@ export const ContactsPage = (props) => {
 
   useEffect(() => {
     const duplicate = contacts.some((contact) => {
-      return contact.name === name;
+      let contactName = contact.name;
+      return contactName.toLowerCase() === name.toLowerCase();
     });
     setDuplicate(duplicate);
   }, [name]);
