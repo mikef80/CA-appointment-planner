@@ -31,8 +31,6 @@ export const AppointmentsPage = (props) => {
     setContact("");
     setDate("");
     setTime("");
-
-    console.log(appointment);
   };
 
   const updateTitleHandler = (e) => {

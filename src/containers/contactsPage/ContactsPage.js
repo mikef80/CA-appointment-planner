@@ -58,6 +58,8 @@ export const ContactsPage = (props) => {
     setDuplicate(duplicate);
   }, [name]);
 
+  console.log(contacts);
+
   return (
     <div>
       <section>

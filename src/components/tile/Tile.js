@@ -3,7 +3,6 @@ import React from "react";
 export const Tile = (props) => {
   const { item } = props;
   const values = Object.values(item);
-  console.log(values);
   return (
     <div className="tile-container">
       {values.map((value, index) => {

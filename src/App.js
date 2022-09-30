@@ -10,9 +10,7 @@ function App() {
   contacts and appointments 
   */
   const [appointments, setAppointments] = useState([]);
-  const [contacts, setContacts] = useState([
-    { name: "Mike", phone: 12345678901, email: "mike@mike-francis.org" },
-  ]);
+  const [contacts, setContacts] = useState([]);
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -24,7 +22,7 @@ function App() {
   contacts and appointments
   */
 
-  const addAppointments = (title, contact, date, time) => {
+  const addAppointments = ({ title, contact, date, time }) => {
     const appointment = {
       title: title,
       contact: contact,
@@ -35,7 +33,7 @@ function App() {
     setAppointments((prev) => [...prev, appointment]);
   };
 
-  const addContacts = ({name, phone, email}) => {
+  const addContacts = ({ name, phone, email }) => {
     const contact = {
       name: name,
       phone: phone,
@@ -47,16 +45,16 @@ function App() {
   return (
     <>
       <nav>
-        <NavLink to={ROUTES.CONTACTS} activeClassName='active'>
+        <NavLink to={ROUTES.CONTACTS} activeClassName="active">
           Contacts
         </NavLink>
-        <NavLink to={ROUTES.APPOINTMENTS} activeClassName='active'>
+        <NavLink to={ROUTES.APPOINTMENTS} activeClassName="active">
           Appointments
         </NavLink>
       </nav>
       <main>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
