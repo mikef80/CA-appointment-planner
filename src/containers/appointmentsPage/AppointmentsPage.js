@@ -31,6 +31,8 @@ export const AppointmentsPage = (props) => {
     setContact("");
     setDate("");
     setTime("");
+
+    console.log(appointment);
   };
 
   const updateTitleHandler = (e) => {
@@ -60,7 +62,7 @@ export const AppointmentsPage = (props) => {
         <AppointmentForm
           title={title}
           setTitle={updateTitleHandler}
-          contact={contact}
+          contacts={contacts}
           setContact={updateContactHandler}
           date={date}
           setDate={updateDateHandler}
